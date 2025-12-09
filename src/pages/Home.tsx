@@ -9,8 +9,9 @@ const Home = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold">Välkommen</h1>
+    <div>
+      <h1 className="text-4xl font-bold">I'm Andreas Stanggren –</h1>
+      <p className="mt-4">A Umeå based web developer and audio explorer filling my time with arts, coding and building web experiences.</p>
       <ul className="mt-8">
         {navLinks.map((link) => (
           <li key={link.path}>

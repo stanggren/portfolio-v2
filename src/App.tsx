@@ -15,13 +15,15 @@ function App() {
     <div className="min-h-screen bg-white flex flex-col">
       {!isHome && <Header />}
       <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/web" element={<Web />} />
-          <Route path="/audio" element={<Audio />} />
-          <Route path="/cv" element={<CV />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <div className="max-w-[1000px] mx-auto px-16 py-32 md:px-24">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/web" element={<Web />} />
+            <Route path="/audio" element={<Audio />} />
+            <Route path="/cv" element={<CV />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
       </main>
       <Footer />
     </div>
