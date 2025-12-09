@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Web from './pages/Web';
@@ -7,9 +7,12 @@ import CV from './pages/CV';
 import Contact from './pages/Contact';
 
 function App() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      {!isHome && <Header />}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
