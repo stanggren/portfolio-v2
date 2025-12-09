@@ -20,7 +20,7 @@ const Header = () => {
             A/S
           </Link>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
