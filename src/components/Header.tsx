@@ -16,7 +16,7 @@ const Header = () => {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors">
+          <Link to="/" className="text-2xl font-bold hover:text-blue-700">
             A/S
           </Link>
 
@@ -25,8 +25,8 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 text-gray-700 hover:text-gray-900 transition-colors ${
-                  isActive(link.path) ? 'font-semibold border-b-2 border-gray-800' : ''
+                className={`px-3 py-2 hover:text-blue-700 ${
+                  isActive(link.path) ? 'font-semibold border-b-2 border-black' : ''
                 }`}
               >
                 {link.label}

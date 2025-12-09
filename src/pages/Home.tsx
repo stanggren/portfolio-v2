@@ -10,14 +10,11 @@ const Home = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-800">Välkommen</h1>
+      <h1 className="text-4xl font-bold">Välkommen</h1>
       <ul className="mt-8">
         {navLinks.map((link) => (
           <li key={link.path}>
-            <Link
-              to={link.path}
-              className="text-gray-700 hover:text-gray-900 transition-colors"
-            >
+            <Link to={link.path} className="hover:text-blue-700">
               {link.label}
             </Link>
           </li>
