@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-8 mt-auto">
+    <footer className="bg-white p-16 mt-auto font-bold">
       <div className="max-w-[1000px] mx-auto px-16 md:px-24">
         <ul>
           <li>

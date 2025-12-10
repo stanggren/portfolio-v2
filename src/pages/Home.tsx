@@ -9,10 +9,10 @@ const Home = () => {
   ];
 
   return (
-    <div>
-      <h1 className="text-4xl font-bold">I'm Andreas Stanggren –</h1>
-      <p className="mt-4">A Umeå based web developer and audio explorer filling my time with arts, coding and building web experiences.</p>
-      <ul className="mt-8">
+    <div className="pt-32">
+      <h1 className="text-2xl font-bold">I'm Andreas Stanggren –</h1>
+      <p className="mt-4">A web developer and audio explorer based in Umeå, spending my time on art, coding, and crafting web experiences.</p>
+      <ul className="mt-32 font-bold">
         {navLinks.map((link) => (
           <li key={link.path}>
             <Link to={link.path} className="hover:text-blue-700">

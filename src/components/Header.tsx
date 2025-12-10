@@ -13,7 +13,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-white sticky top-0 z-50">
       <nav className="max-w-[1000px] mx-auto px-16 py-16 md:px-24">
         <div className="flex items-center justify-between">
           <Link to="/" className="font-bold hover:text-blue-700">
