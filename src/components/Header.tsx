@@ -14,19 +14,19 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="max-w-[1000px] mx-auto px-16 py-16 md:px-24">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold hover:text-blue-700">
+          <Link to="/" className="font-bold hover:text-blue-700">
             A/S
           </Link>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 text-center">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 hover:text-blue-700 ${
-                  isActive(link.path) ? 'font-semibold border-b-2 border-black' : ''
+                className={`px-3 py-2 hover:text-blue-700 font-bold ${
+                  isActive(link.path) ? 'underline' : ''
                 }`}
               >
                 {link.label}
