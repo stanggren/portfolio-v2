@@ -5,7 +5,7 @@ const Home = () => {
     { path: '/web', label: 'Web' },
     { path: '/audio', label: 'Audio' },
     { path: '/cv', label: 'CV' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/contact', label: 'Kontakt' },
   ];
 
   return (
