@@ -20,6 +20,17 @@ const Header = () => {
     return pathWithoutLang === checkPath || currentPath === path;
   };
 
+  const getLanguageSwitchPath = (targetLang: 'en' | 'sv') => {
+    const currentPath = location.pathname;
+    if (targetLang === 'sv') {
+      return `/sv${currentPath.replace(/^\/sv/, '')}`;
+    } else {
+      return currentPath.replace(/^\/sv/, '') || '/';
+    }
+  };
+
+  const isEnglish = i18n.language === 'en';
+
   return (
     <header className="bg-white sticky top-0 z-50">
       <nav className="max-w-[1000px] mx-auto px-16 py-16 md:px-24">
@@ -40,6 +51,21 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
+            <div className="px-3 py-2">
+              <Link
+                to={getLanguageSwitchPath('en')}
+                className={`hover:text-blue-700 ${isEnglish ? 'font-bold' : ''}`}
+              >
+                en
+              </Link>
+              <span className="mx-1">/</span>
+              <Link
+                to={getLanguageSwitchPath('sv')}
+                className={`hover:text-blue-700 ${!isEnglish ? 'font-bold' : ''}`}
+              >
+                sv
+              </Link>
+            </div>
           </div>
         </div>
       </nav>

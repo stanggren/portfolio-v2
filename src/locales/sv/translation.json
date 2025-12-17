@@ -3,17 +3,17 @@
     "web": "Web",
     "audio": "Audio",
     "cv": "CV",
-    "contact": "Contact"
+    "contact": "Kontakt"
   },
   "home": {
-    "title": "I'm Andreas Stanggren –",
-    "intro": "A web developer and audio explorer based in Umeå, spending my time on art, coding, and crafting web experiences."
+    "title": "Jag är Andreas Stanggren –",
+    "intro": "Webbutvecklare och ljudutforskare i Umeå, som spenderar min tid på konst, kod och att skapa webbupplevelser."
   },
   "web": {
     "title": "Web",
-    "grebbanTitle": "Selection of works at",
+    "grebbanTitle": "Urval av arbeten på",
     "grebbanLink": "Grebban",
-    "consultingTitle": "Selection of consulting works",
+    "consultingTitle": "Urval av konsultuppdrag",
     "roles": {
       "techLead": "Tech Lead",
       "frontendDeveloper": "Frontend Developer"
@@ -21,17 +21,17 @@
   },
   "audio": {
     "title": "Audio",
-    "taniSopranoDescription": "Music",
+    "taniSopranoDescription": "Musik",
     "individualWork": "Individual work",
-    "individualWorkDescription": "Music and sound art",
-    "whiteHookRiverDescription": "Music & SFX",
-    "whiteHookRiverAward": "Winner of Umeå University Computer Science Game Jam 2024",
-    "playDemo": "Play demo on itch.io"
+    "individualWorkDescription": "Musik och ljudkonst",
+    "whiteHookRiverDescription": "Musik & ljudeffekter",
+    "whiteHookRiverAward": "Vinnare av Umeå University Computer Science Game Jam 2024",
+    "playDemo": "Spela demo på itch.io"
   },
   "cv": {
     "title": "CV",
-    "education": "Education",
-    "work": "Work",
+    "education": "Utbildning",
+    "work": "Arbete",
     "other": "Övrigt",
     "education_items": {
       "hola": {
@@ -102,7 +102,7 @@
     }
   },
   "contact": {
-    "title": "Contact"
+    "title": "Kontakt"
   },
   "languageSwitcher": {
     "switchTo": "English"
