@@ -43,13 +43,13 @@
         "name": "Umeå Universitet",
         "description": "Musikproduktion 1 & 2",
         "period": "2023–2024",
-        "details": "Ljudteknik, Mixning och mastering, Inspelning och produktion, Musikteori, arrangering och komposition"
+        "details": "Ljudteknik, mixning och mastering, inspelning och produktion, musikteori, arrangering och komposition"
       },
       "teknikhogskolan": {
         "name": "Teknikhögskolan",
         "description": ".NET Fullstackutvecklare, Göteborg",
         "period": "2018–2020",
-        "details": "Programmeringsteknik C#, Databaser med SQL, Webbutveckling backend .NET, Dataåtkomster i .NET, Webbutveckling frontend"
+        "details": "Programmeringsteknik C#, databaser med SQL, webbutveckling backend .NET, dataåtkomster i .NET, webbutveckling frontend"
       },
       "hulebacksgymnasiet": {
         "name": "Hulebäcksgymnasiet",
