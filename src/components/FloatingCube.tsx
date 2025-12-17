@@ -1,7 +1,11 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-const FloatingCube = () => {
+interface FloatingCubeProps {
+  delay?: number; // Delay before cube appears (ms)
+}
+
+const FloatingCube = ({ delay = 0 }: FloatingCubeProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,14 +40,23 @@ const FloatingCube = () => {
     let currentGeometryIndex = 0;
     let edges = new THREE.EdgesGeometry(geometries[0]);
     const shape = new THREE.LineSegments(edges, material);
+    shape.visible = false; // Hidden until delay passes
     scene.add(shape);
 
     camera.position.z = 12;
 
     // Floating animation variables
-    let time = 0;
     const floatSpeed = 0.01;
     const floatAmplitude = 1;
+
+    // Time tracking
+    const startTime = performance.now();
+    const delayMs = delay;
+
+    // Visibility and entrance glitch
+    let hasAppeared = false;
+    let entranceGlitchCount = 0;
+    const maxEntranceGlitches = 5; // Number of rapid glitches on entrance
 
     // Glitch effect variables
     let isGlitching = false;
@@ -51,10 +64,11 @@ const FloatingCube = () => {
     let glitchOffsetX = 0;
     let glitchOffsetY = 0;
     let glitchScale = 1;
+    let animTime = 0;
 
     const triggerGlitch = () => {
       isGlitching = true;
-      glitchEndTime = time + 0.05 + Math.random() * 0.1; // Glitch duration: 50-150ms
+      glitchEndTime = animTime + 0.05 + Math.random() * 0.1; // Glitch duration: 50-150ms
       glitchOffsetX = (Math.random() - 0.5) * 0.5;
       glitchOffsetY = (Math.random() - 0.5) * 0.5;
       glitchScale = 0.9 + Math.random() * 0.2;
@@ -67,6 +81,21 @@ const FloatingCube = () => {
         edges = new THREE.EdgesGeometry(geometries[currentGeometryIndex]);
         shape.geometry = edges;
       }
+    };
+
+    const triggerEntranceGlitch = () => {
+      isGlitching = true;
+      glitchEndTime = animTime + 0.03 + Math.random() * 0.05; // Shorter glitches for entrance
+      glitchOffsetX = (Math.random() - 0.5) * 1.5; // More extreme offset
+      glitchOffsetY = (Math.random() - 0.5) * 1.5;
+      glitchScale = 0.5 + Math.random() * 1.0; // More extreme scale
+
+      // Change geometry randomly
+      const newIndex = Math.floor(Math.random() * geometries.length);
+      currentGeometryIndex = newIndex;
+      edges.dispose();
+      edges = new THREE.EdgesGeometry(geometries[currentGeometryIndex]);
+      shape.geometry = edges;
     };
 
     const resetGeometry = () => {
@@ -82,20 +111,43 @@ const FloatingCube = () => {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      time += 0.01;
+      
+      const elapsed = performance.now() - startTime;
+      animTime += 0.01;
+
+      // Check if delay has passed
+      if (!hasAppeared) {
+        if (elapsed >= delayMs) {
+          hasAppeared = true;
+          shape.visible = true;
+          triggerEntranceGlitch();
+          entranceGlitchCount = 1;
+        } else {
+          renderer.render(scene, camera);
+          return;
+        }
+      }
+
+      // Entrance glitch sequence
+      if (entranceGlitchCount > 0 && entranceGlitchCount < maxEntranceGlitches && !isGlitching) {
+        triggerEntranceGlitch();
+        entranceGlitchCount++;
+      }
 
       // Random glitch trigger (roughly every 2-5 seconds)
-      if (!isGlitching && Math.random() < 0.003) {
+      if (!isGlitching && entranceGlitchCount >= maxEntranceGlitches && Math.random() < 0.003) {
         triggerGlitch();
       }
 
       // End glitch
-      if (isGlitching && time > glitchEndTime) {
+      if (isGlitching && animTime > glitchEndTime) {
         isGlitching = false;
         glitchOffsetX = 0;
         glitchOffsetY = 0;
         glitchScale = 1;
-        resetGeometry();
+        if (entranceGlitchCount >= maxEntranceGlitches) {
+          resetGeometry();
+        }
       }
 
       // Rotation
@@ -103,8 +155,8 @@ const FloatingCube = () => {
       shape.rotation.y += 0.001;
 
       // Floating movement + glitch offset
-      shape.position.x = Math.sin(time * floatSpeed) * floatAmplitude + glitchOffsetX;
-      shape.position.y = Math.cos(time * floatSpeed * 0.7) * floatAmplitude * 0.5 + glitchOffsetY;
+      shape.position.x = Math.sin(animTime * floatSpeed) * floatAmplitude + glitchOffsetX;
+      shape.position.y = Math.cos(animTime * floatSpeed * 0.7) * floatAmplitude * 0.5 + glitchOffsetY;
 
       // Glitch scale
       shape.scale.set(glitchScale, glitchScale, glitchScale);
@@ -132,7 +184,7 @@ const FloatingCube = () => {
       material.dispose();
       renderer.dispose();
     };
-  }, []);
+  }, [delay]);
 
   return (
     <div
