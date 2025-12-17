@@ -39,17 +39,29 @@ const Web = () => {
   ];
 
   const consultingWorks = [
-    'Verkligheten',
-    'Ewas Glada Galleri',
-    'Vals Kulturförening',
+    {
+      name: 'Verkligheten',
+      url: 'https://verkligheten.net/',
+      tech: 'WordPress, PHP, Mail Client, Third Party Integrations',
+    },
+    {
+      name: 'Ewas Glada Galleri',
+      url: 'https://ewasgladagalleri.se/',
+      tech: 'WordPress, PHP, Booking System, Payment System, Design, Copy',
+    },
+    {
+      name: 'Vals Kulturförening',
+      url: 'https://valsforening.se/',
+      tech: 'WordPress, PHP, Design, Copy',
+    },
   ];
 
   return (
     <div>
-      <h1 className="sr-only">Web</h1>
+      <h1 className="font-bold pb-24">Web</h1>
 
       <section>
-        <h2 className="font-bold">Selection of works at Grebban</h2>
+        <h2 className="font-bold">Selection of works at <a href="https://www.grebban.com/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">Grebban</a></h2>
         <ul className="mt-16">
           {grebbanWorks.map((work) => (
             <li key={work.name} className="mb-16">
@@ -65,11 +77,18 @@ const Web = () => {
         </ul>
       </section>
 
-      <section className="mt-32">
+      <section className="mt-48">
         <h2 className="font-bold">Selection of consulting works</h2>
         <ul className="mt-16">
           {consultingWorks.map((work) => (
-            <li key={work}>{work}</li>
+            <li key={work.name} className="mb-16">
+              <h3 className="font-bold">
+                <a href={work.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">
+                  {work.name}
+                </a>
+              </h3>
+              <p className="text-sm">{work.tech}</p>
+            </li>
           ))}
         </ul>
       </section>
