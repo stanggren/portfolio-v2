@@ -51,17 +51,17 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <div className="px-3 py-2">
+            <div className="px-3 py-2 font-bold">
               <Link
                 to={getLanguageSwitchPath('en')}
-                className={`hover:text-blue-700 ${isEnglish ? 'font-bold' : ''}`}
+                className={`hover:text-blue-700 ${isEnglish ? 'underline' : ''}`}
               >
                 en
               </Link>
               <span className="mx-1">/</span>
               <Link
                 to={getLanguageSwitchPath('sv')}
-                className={`hover:text-blue-700 ${!isEnglish ? 'font-bold' : ''}`}
+                className={`hover:text-blue-700 ${!isEnglish ? 'underline' : ''}`}
               >
                 sv
               </Link>

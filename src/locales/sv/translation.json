@@ -1,6 +1,6 @@
 {
   "nav": {
-    "web": "Web",
+    "web": "Webb",
     "audio": "Audio",
     "cv": "CV",
     "contact": "Kontakt"
@@ -10,7 +10,7 @@
     "intro": "Webbutvecklare och ljudutforskare i Umeå, som spenderar min tid på konst, kod och att skapa webbupplevelser."
   },
   "web": {
-    "title": "Web",
+    "title": "Webb",
     "grebbanTitle": "Urval av arbeten på",
     "grebbanLink": "Grebban",
     "consultingTitle": "Urval av konsultuppdrag",
