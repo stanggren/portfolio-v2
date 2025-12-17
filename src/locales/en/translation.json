@@ -32,72 +32,72 @@
     "title": "CV",
     "education": "Education",
     "work": "Work",
-    "other": "Övrigt",
+    "other": "Other",
     "education_items": {
       "hola": {
         "name": "Hola Folkhögskola",
-        "description": "Ljudkonst: Deep Listening & Text Scores",
+        "description": "Sound Art: Deep Listening & Text Scores",
         "period": "2025–2026"
       },
       "umea": {
-        "name": "Umeå Universitet",
-        "description": "Musikproduktion 1 & 2",
+        "name": "Umeå University",
+        "description": "Music Production 1 & 2",
         "period": "2023–2024",
-        "details": "Ljudteknik, Mixning och mastering, Inspelning och produktion, Musikteori, arrangering och komposition"
+        "details": "Audio engineering, Mixing and mastering, Recording and production, Music theory, arrangement and composition"
       },
       "teknikhogskolan": {
         "name": "Teknikhögskolan",
-        "description": ".NET Fullstackutvecklare, Göteborg",
+        "description": ".NET Fullstack Developer, Gothenburg",
         "period": "2018–2020",
-        "details": "Programmeringsteknik C#, Databaser med SQL, Webbutveckling backend .NET, Dataåtkomster i .NET, Webbutveckling frontend"
+        "details": "Programming C#, Databases with SQL, Backend web development .NET, Data access in .NET, Frontend web development"
       },
       "hulebacksgymnasiet": {
         "name": "Hulebäcksgymnasiet",
-        "description": "Ekonomi-/Samhällsprogrammet, Mölnlycke",
+        "description": "Economics/Social Sciences Program, Mölnlycke",
         "period": "2009–2012"
       }
     },
     "work_items": {
       "grebban": {
-        "title": "Webbutvecklare och tech lead",
-        "company": "Grebban, Göteborg/Stockholm & remote",
+        "title": "Web developer and tech lead",
+        "company": "Grebban, Gothenburg/Stockholm & remote",
         "period": "2021–"
       },
       "visitGroup": {
-        "title": "Webbutvecklare – praktik",
-        "company": "Visit Group, Göteborg",
+        "title": "Web developer – internship",
+        "company": "Visit Group, Gothenburg",
         "period": "2019–2020"
       },
       "brattasskolan": {
-        "title": "Elevassistent och lärarvikarie",
+        "title": "Teaching assistant and substitute teacher",
         "company": "Brattåsskolan, Mölndal",
         "period": "2014–2018"
       },
       "stenaLine": {
-        "title": "Lageransvar",
+        "title": "Warehouse manager",
         "company": "Stena Line Nautica, Varberg",
         "period": "2015–2016"
       },
       "ies": {
-        "title": "Vikarie",
-        "company": "Internationella Engelska Skolan, Göteborg",
+        "title": "Substitute teacher",
+        "company": "Internationella Engelska Skolan, Gothenburg",
         "period": "2014"
       },
       "australia": {
-        "title": "Bosatt i Australien",
+        "title": "Living in Australia",
         "period": "2013–2014"
       },
       "willys": {
-        "title": "Kassa",
-        "company": "Willys, Göteborg",
+        "title": "Cashier",
+        "company": "Willys, Gothenburg",
         "period": "2011–2013"
       }
     },
     "other_items": {
       "vals": {
         "name": "Vals Förening",
-        "role": "Medgrundare och medlem",
-        "description": "Driver Vals Galleri"
+        "role": "Co-founder and member",
+        "description": "Runs Vals Galleri"
       }
     }
   },
