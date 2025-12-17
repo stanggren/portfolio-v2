@@ -14,14 +14,14 @@ const Home = () => {
 
   return (
     <>
-      <FloatingCube delay={1800} />
+      <FloatingCube delay={1000} />
       <div className="relative z-10">
         <h1>
           <ScrambleText 
             key={`title-${animationKey}-${i18n.language}`} 
             text={t('home.title')} 
             delay={0}
-            scrambleDuration={1400}
+            scrambleDuration={800}
             scrambleSpeedStart={100}
             scrambleSpeedEnd={400}
           />
@@ -31,7 +31,7 @@ const Home = () => {
             key={`intro-${animationKey}-${i18n.language}`} 
             text={t('home.intro')} 
             delay={0}
-            scrambleDuration={1400}
+            scrambleDuration={800}
             scrambleSpeedStart={100}
             scrambleSpeedEnd={400}
           />

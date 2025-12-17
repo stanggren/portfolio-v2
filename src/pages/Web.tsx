@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import ScrambleText from '../components/ScrambleText';
 
 const Web = () => {
   const { t } = useTranslation();
@@ -62,7 +63,9 @@ const Web = () => {
 
   return (
     <div>
-      <h1 className="font-bold pb-24">{t('web.title')}</h1>
+      <h1 className="font-bold pb-24">
+        <ScrambleText text={t('web.title')} scrambleDuration={400} scrambleSpeedStart={50} scrambleSpeedEnd={200} />
+      </h1>
 
       <section>
         <h2 className="font-bold">{t('web.grebbanTitle')} <a href="https://www.grebban.com/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">{t('web.grebbanLink')}</a></h2>

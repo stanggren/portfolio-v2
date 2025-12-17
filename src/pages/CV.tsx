@@ -1,11 +1,14 @@
 import { useTranslation } from 'react-i18next';
+import ScrambleText from '../components/ScrambleText';
 
 const CV = () => {
   const { t } = useTranslation();
 
   return (
     <div>
-      <h1 className="font-bold pb-24">{t('cv.title')}</h1>
+      <h1 className="font-bold pb-24">
+        <ScrambleText text={t('cv.title')} scrambleDuration={400} scrambleSpeedStart={50} scrambleSpeedEnd={200} />
+      </h1>
 
       <section>
         <h2 className="font-bold">{t('cv.education')}</h2>
