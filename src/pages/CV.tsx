@@ -4,7 +4,7 @@ const CV = () => {
       <h1 className="font-bold pb-24">CV</h1>
 
       <section>
-        <h2 className="font-bold">Utbildning</h2>
+        <h2 className="font-bold">Education</h2>
         <ul className="mt-16">
           <li className="mb-16">
             <h3 className="font-bold">Hola Folkhögskola</h3>
@@ -32,7 +32,7 @@ const CV = () => {
       </section>
 
       <section className="mt-48">
-        <h2 className="font-bold">Arbete</h2>
+        <h2 className="font-bold">Work</h2>
         <ul className="mt-16">
           <li className="mb-16">
             <h3 className="font-bold">Webbutvecklare och tech lead</h3>
