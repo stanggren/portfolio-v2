@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 interface ScrambleTextProps {
   text: string;
@@ -7,7 +7,6 @@ interface ScrambleTextProps {
   scrambleDuration?: number; // How long to show randomizing scramble (ms)
   scrambleSpeedStart?: number; // Initial scramble speed - fast (ms)
   scrambleSpeedEnd?: number; // Final scramble speed - slow (ms)
-  holdDuration?: number; // How long to hold final scrambled text before reveal (ms)
 }
 
 const CHARS = '#%@$&*0123456789?!<>[]{}|/\\~^';
@@ -24,22 +23,16 @@ const ScrambleText = ({
   delay = 0,
   scrambleDuration = 800,
   scrambleSpeedStart = 30,
-  scrambleSpeedEnd = 150,
-  holdDuration = 200
+  scrambleSpeedEnd = 150
 }: ScrambleTextProps) => {
-  const [phase, setPhase] = useState<'waiting' | 'scrambling' | 'revealing' | 'done'>('waiting');
+  const [phase, setPhase] = useState<'waiting' | 'scrambling' | 'done'>('waiting');
   const [scrambledText, setScrambledText] = useState(() => generateScrambled(text));
-  const [revealedCount, setRevealedCount] = useState(0);
   const startTimeRef = useRef<number>(0);
-
-  // Generate final static scrambled text for hold/reveal phase
-  const finalScrambled = useMemo(() => generateScrambled(text), [text]);
 
   // Reset when text changes
   useEffect(() => {
     setPhase('waiting');
     setScrambledText(generateScrambled(text));
-    setRevealedCount(0);
     startTimeRef.current = Date.now();
   }, [text]);
 
@@ -54,7 +47,7 @@ const ScrambleText = ({
     return () => clearTimeout(timeout);
   }, [phase, delay]);
 
-  // Phase 1: Scramble with linear slowdown
+  // Phase 1: Scramble with linear slowdown, then switch to real text
   useEffect(() => {
     if (phase !== 'scrambling') return;
 
@@ -69,8 +62,7 @@ const ScrambleText = ({
       const currentSpeed = scrambleSpeedStart + (scrambleSpeedEnd - scrambleSpeedStart) * progress;
 
       if (elapsed >= scrambleDuration) {
-        setScrambledText(finalScrambled);
-        setPhase('revealing');
+        setPhase('done');
         return;
       }
 
@@ -83,42 +75,13 @@ const ScrambleText = ({
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [phase, text, scrambleDuration, scrambleSpeedStart, scrambleSpeedEnd, finalScrambled]);
-
-  // Phase 2: Reveal real text from left to right
-  useEffect(() => {
-    if (phase !== 'revealing') return;
-
-    if (revealedCount >= text.length) {
-      setPhase('done');
-      return;
-    }
-
-    const charDelay = holdDuration / text.length;
-    const timeout = setTimeout(() => {
-      setRevealedCount(prev => prev + 1);
-    }, charDelay);
-
-    return () => clearTimeout(timeout);
-  }, [phase, revealedCount, text.length, holdDuration]);
-
-  // Build display text
-  const getDisplayText = () => {
-    if (phase === 'waiting') {
-      return scrambledText;
-    }
-    if (phase === 'revealing') {
-      // Show revealed real chars + remaining scrambled chars
-      return text.slice(0, revealedCount) + finalScrambled.slice(revealedCount);
-    }
-    return scrambledText;
-  };
+  }, [phase, text, scrambleDuration, scrambleSpeedStart, scrambleSpeedEnd]);
 
   if (phase === 'done') {
     return <span className={className}>{text}</span>;
   }
 
-  return <span className={className}>{getDisplayText()}</span>;
+  return <span className={className}>{scrambledText}</span>;
 };
 
 export default ScrambleText;

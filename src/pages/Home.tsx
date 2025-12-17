@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <>
-      <FloatingCube delay={2000} />
+      <FloatingCube delay={1800} />
       <div className="relative z-10">
         <h1>
           <ScrambleText 
@@ -23,8 +23,7 @@ const Home = () => {
             delay={0}
             scrambleDuration={1400}
             scrambleSpeedStart={100}
-            scrambleSpeedEnd={600}
-            holdDuration={500} 
+            scrambleSpeedEnd={400}
           />
         </h1>
         <p className="mt-4 max-w-[400px]">
@@ -34,8 +33,7 @@ const Home = () => {
             delay={0}
             scrambleDuration={1400}
             scrambleSpeedStart={100}
-            scrambleSpeedEnd={600}
-            holdDuration={500} 
+            scrambleSpeedEnd={400}
           />
         </p>
       </div>
