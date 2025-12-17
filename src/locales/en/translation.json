@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "web": "Web",
+    "audio": "Audio",
+    "cv": "CV",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "I'm Andreas Stanggren –",
+    "intro": "A web developer and audio explorer based in Umeå, spending my time on art, coding, and crafting web experiences."
+  },
+  "web": {
+    "title": "Web",
+    "grebbanTitle": "Selection of works at",
+    "grebbanLink": "Grebban",
+    "consultingTitle": "Selection of consulting works",
+    "roles": {
+      "techLead": "Tech Lead",
+      "frontendDeveloper": "Frontend Developer"
+    }
+  },
+  "audio": {
+    "title": "Audio",
+    "taniSopranoDescription": "Music",
+    "individualWork": "Individual work",
+    "individualWorkDescription": "Music and sound art",
+    "whiteHookRiverDescription": "Music & SFX",
+    "whiteHookRiverAward": "Winner of Umeå University Computer Science Game Jam 2024",
+    "playDemo": "Play demo on itch.io"
+  },
+  "cv": {
+    "title": "CV",
+    "education": "Education",
+    "work": "Work",
+    "other": "Övrigt",
+    "education_items": {
+      "hola": {
+        "name": "Hola Folkhögskola",
+        "description": "Ljudkonst: Deep Listening & Text Scores",
+        "period": "2025–2026"
+      },
+      "umea": {
+        "name": "Umeå Universitet",
+        "description": "Musikproduktion 1 & 2",
+        "period": "2023–2024",
+        "details": "Ljudteknik, Mixning och mastering, Inspelning och produktion, Musikteori, arrangering och komposition"
+      },
+      "teknikhogskolan": {
+        "name": "Teknikhögskolan",
+        "description": ".NET Fullstackutvecklare, Göteborg",
+        "period": "2018–2020",
+        "details": "Programmeringsteknik C#, Databaser med SQL, Webbutveckling backend .NET, Dataåtkomster i .NET, Webbutveckling frontend"
+      },
+      "hulebacksgymnasiet": {
+        "name": "Hulebäcksgymnasiet",
+        "description": "Ekonomi-/Samhällsprogrammet, Mölnlycke",
+        "period": "2009–2012"
+      }
+    },
+    "work_items": {
+      "grebban": {
+        "title": "Webbutvecklare och tech lead",
+        "company": "Grebban, Göteborg/Stockholm & remote",
+        "period": "2021–"
+      },
+      "visitGroup": {
+        "title": "Webbutvecklare – praktik",
+        "company": "Visit Group, Göteborg",
+        "period": "2019–2020"
+      },
+      "brattasskolan": {
+        "title": "Elevassistent och lärarvikarie",
+        "company": "Brattåsskolan, Mölndal",
+        "period": "2014–2018"
+      },
+      "stenaLine": {
+        "title": "Lageransvar",
+        "company": "Stena Line Nautica, Varberg",
+        "period": "2015–2016"
+      },
+      "ies": {
+        "title": "Vikarie",
+        "company": "Internationella Engelska Skolan, Göteborg",
+        "period": "2014"
+      },
+      "australia": {
+        "title": "Bosatt i Australien",
+        "period": "2013–2014"
+      },
+      "willys": {
+        "title": "Kassa",
+        "company": "Willys, Göteborg",
+        "period": "2011–2013"
+      }
+    },
+    "other_items": {
+      "vals": {
+        "name": "Vals Förening",
+        "role": "Medgrundare och medlem",
+        "description": "Driver Vals Galleri"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "languageSwitcher": {
+    "switchTo": "Svenska"
+  }
+}

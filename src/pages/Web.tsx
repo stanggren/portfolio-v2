@@ -1,39 +1,43 @@
+import { useTranslation } from 'react-i18next';
+
 const Web = () => {
+  const { t } = useTranslation();
+
   const grebbanWorks = [
     {
       name: 'Skateovation',
       url: 'https://skateovation.com/',
-      role: 'Tech Lead',
+      roleKey: 'web.roles.techLead',
       tech: 'Shopify, System Architecture, Liquid, Alpine.js, Tailwind',
     },
     {
       name: 'Macforum',
       url: 'https://www.macforum.se/',
-      role: 'Tech Lead',
+      roleKey: 'web.roles.techLead',
       tech: 'Shopify, System Architecture, Data Migration, Liquid, React.js, Tailwind',
     },
     {
       name: 'Dotkeeper',
       url: 'https://dotkeeper.com/',
-      role: 'Frontend Developer',
+      roleKey: 'web.roles.frontendDeveloper',
       tech: 'WordPress, PHP Laravel, Bedrock, Sass, jQuery',
     },
     {
       name: 'J.Lindeberg',
       url: 'https://www.jlindeberg.com/',
-      role: 'Frontend Developer',
+      roleKey: 'web.roles.frontendDeveloper',
       tech: 'Shopify, Liquid, Alpine.js, React.js, Tailwind',
     },
     {
       name: 'Pinewood',
       url: 'https://pinewood.eu/',
-      role: 'Frontend Developer',
+      roleKey: 'web.roles.frontendDeveloper',
       tech: 'Shopify, Liquid, Alpine.js, Tailwind',
     },
     {
       name: 'Rixo',
       url: 'https://rixolondon.com/',
-      role: 'Frontend Developer',
+      roleKey: 'web.roles.frontendDeveloper',
       tech: 'Shopify, Liquid, Alpine.js, React.js, Tailwind',
     },
   ];
@@ -58,10 +62,10 @@ const Web = () => {
 
   return (
     <div>
-      <h1 className="font-bold pb-24">Web</h1>
+      <h1 className="font-bold pb-24">{t('web.title')}</h1>
 
       <section>
-        <h2 className="font-bold">Selection of works at <a href="https://www.grebban.com/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">Grebban</a></h2>
+        <h2 className="font-bold">{t('web.grebbanTitle')} <a href="https://www.grebban.com/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">{t('web.grebbanLink')}</a></h2>
         <ul className="mt-16">
           {grebbanWorks.map((work) => (
             <li key={work.name} className="mb-16">
@@ -70,7 +74,7 @@ const Web = () => {
                   {work.name}
                 </a>
               </h3>
-              <p>{work.role}</p>
+              <p>{t(work.roleKey)}</p>
               <p className="text-sm">{work.tech}</p>
             </li>
           ))}
@@ -78,7 +82,7 @@ const Web = () => {
       </section>
 
       <section className="mt-48">
-        <h2 className="font-bold">Selection of consulting works</h2>
+        <h2 className="font-bold">{t('web.consultingTitle')}</h2>
         <ul className="mt-16">
           {consultingWorks.map((work) => (
             <li key={work.name} className="mb-16">

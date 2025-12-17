@@ -1,7 +1,11 @@
+import { useTranslation } from 'react-i18next';
+
 const Audio = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
-      <h1 className="font-bold pb-24">Audio</h1>
+      <h1 className="font-bold pb-24">{t('audio.title')}</h1>
       <section>
         <ul>
           <li className="mb-16">
@@ -10,13 +14,13 @@ const Audio = () => {
                 Tåni Såprano EP
               </a>
             </h3>
-            <p>Music</p>
+            <p>{t('audio.taniSopranoDescription')}</p>
           </li>
           <li className="mb-16">
             <a href="https://soundcloud.com/andreas-stanggren" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-blue-700">
-              Individual work
+              {t('audio.individualWork')}
             </a>
-            <p>Music and sound art</p>
+            <p>{t('audio.individualWorkDescription')}</p>
           </li>
           <li className="mb-16">
             <h3 className="font-bold">
@@ -24,11 +28,11 @@ const Audio = () => {
                 White Hook River
               </a>
             </h3>
-            <p>Music & SFX</p>
-            <p className="text-sm">Winner of Umeå University Computer Science Game Jam 2024</p>
+            <p>{t('audio.whiteHookRiverDescription')}</p>
+            <p className="text-sm">{t('audio.whiteHookRiverAward')}</p>
             <p className="text-sm">
               <a href="https://frostspektrum.itch.io/hookem" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">
-                Play demo on itch.io
+                {t('audio.playDemo')}
               </a>
             </p>
           </li>

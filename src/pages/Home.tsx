@@ -1,17 +1,21 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
+  const langPrefix = i18n.language === 'en' ? '' : `/${i18n.language}`;
+
   const navLinks = [
-    { path: '/web', label: 'Web' },
-    { path: '/audio', label: 'Audio' },
-    { path: '/cv', label: 'CV' },
-    { path: '/contact', label: 'Contact' },
+    { path: `${langPrefix}/web`, label: t('nav.web') },
+    { path: `${langPrefix}/audio`, label: t('nav.audio') },
+    { path: `${langPrefix}/cv`, label: t('nav.cv') },
+    { path: `${langPrefix}/contact`, label: t('nav.contact') },
   ];
 
   return (
     <div className="pt-32 md:pt-56">
-      <h1 className="text-2xl font-bold">I'm Andreas Stanggren –</h1>
-      <p className="mt-4">A web developer and audio explorer based in Umeå, spending my time on art, coding, and crafting web experiences.</p>
+      <h1 className="text-2xl font-bold">{t('home.title')}</h1>
+      <p className="mt-4">{t('home.intro')}</p>
       <ul className="mt-32 font-bold">
         {navLinks.map((link) => (
           <li key={link.path}>

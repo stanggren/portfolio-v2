@@ -1,87 +1,91 @@
+import { useTranslation } from 'react-i18next';
+
 const CV = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
-      <h1 className="font-bold pb-24">CV</h1>
+      <h1 className="font-bold pb-24">{t('cv.title')}</h1>
 
       <section>
-        <h2 className="font-bold">Education</h2>
+        <h2 className="font-bold">{t('cv.education')}</h2>
         <ul className="mt-16">
           <li className="mb-16">
-            <h3 className="font-bold">Hola Folkhögskola</h3>
-            <p>Ljudkonst: Deep Listening & Text Scores</p>
-            <p className="text-sm">2025–2026</p>
+            <h3 className="font-bold">{t('cv.education_items.hola.name')}</h3>
+            <p>{t('cv.education_items.hola.description')}</p>
+            <p className="text-sm">{t('cv.education_items.hola.period')}</p>
           </li>
           <li className="mb-16">
-            <h3 className="font-bold">Umeå Universitet</h3>
-            <p>Musikproduktion 1 & 2</p>
-            <p className="text-sm">2023–2024</p>
-            <p className="text-sm">Ljudteknik, Mixning och mastering, Inspelning och produktion, Musikteori, arrangering och komposition</p>
+            <h3 className="font-bold">{t('cv.education_items.umea.name')}</h3>
+            <p>{t('cv.education_items.umea.description')}</p>
+            <p className="text-sm">{t('cv.education_items.umea.period')}</p>
+            <p className="text-sm">{t('cv.education_items.umea.details')}</p>
           </li>
           <li className="mb-16">
-            <h3 className="font-bold">Teknikhögskolan</h3>
-            <p>.NET Fullstackutvecklare, Göteborg</p>
-            <p className="text-sm">2018–2020</p>
-            <p className="text-sm">Programmeringsteknik C#, Databaser med SQL, Webbutveckling backend .NET, Dataåtkomster i .NET, Webbutveckling frontend</p>
+            <h3 className="font-bold">{t('cv.education_items.teknikhogskolan.name')}</h3>
+            <p>{t('cv.education_items.teknikhogskolan.description')}</p>
+            <p className="text-sm">{t('cv.education_items.teknikhogskolan.period')}</p>
+            <p className="text-sm">{t('cv.education_items.teknikhogskolan.details')}</p>
           </li>
           <li className="mb-16">
-            <h3 className="font-bold">Hulebäcksgymnasiet</h3>
-            <p>Ekonomi-/Samhällsprogrammet, Mölnlycke</p>
-            <p className="text-sm">2009–2012</p>
+            <h3 className="font-bold">{t('cv.education_items.hulebacksgymnasiet.name')}</h3>
+            <p>{t('cv.education_items.hulebacksgymnasiet.description')}</p>
+            <p className="text-sm">{t('cv.education_items.hulebacksgymnasiet.period')}</p>
           </li>
         </ul>
       </section>
 
       <section className="mt-48">
-        <h2 className="font-bold">Work</h2>
+        <h2 className="font-bold">{t('cv.work')}</h2>
         <ul className="mt-16">
           <li className="mb-16">
-            <h3 className="font-bold">Webbutvecklare och tech lead</h3>
-            <p>Grebban, Göteborg/Stockholm & remote</p>
-            <p className="text-sm">2021–</p>
+            <h3 className="font-bold">{t('cv.work_items.grebban.title')}</h3>
+            <p>{t('cv.work_items.grebban.company')}</p>
+            <p className="text-sm">{t('cv.work_items.grebban.period')}</p>
           </li>
           <li className="mb-16">
-            <h3 className="font-bold">Webbutvecklare – praktik</h3>
-            <p>Visit Group, Göteborg</p>
-            <p className="text-sm">2019–2020</p>
+            <h3 className="font-bold">{t('cv.work_items.visitGroup.title')}</h3>
+            <p>{t('cv.work_items.visitGroup.company')}</p>
+            <p className="text-sm">{t('cv.work_items.visitGroup.period')}</p>
           </li>
           <li className="mb-16">
-            <h3 className="font-bold">Elevassistent och lärarvikarie</h3>
-            <p>Brattåsskolan, Mölndal</p>
-            <p className="text-sm">2014–2018</p>
+            <h3 className="font-bold">{t('cv.work_items.brattasskolan.title')}</h3>
+            <p>{t('cv.work_items.brattasskolan.company')}</p>
+            <p className="text-sm">{t('cv.work_items.brattasskolan.period')}</p>
           </li>
           <li className="mb-16">
-            <h3 className="font-bold">Lageransvar</h3>
-            <p>Stena Line Nautica, Varberg</p>
-            <p className="text-sm">2015–2016</p>
+            <h3 className="font-bold">{t('cv.work_items.stenaLine.title')}</h3>
+            <p>{t('cv.work_items.stenaLine.company')}</p>
+            <p className="text-sm">{t('cv.work_items.stenaLine.period')}</p>
           </li>
           <li className="mb-16">
-            <h3 className="font-bold">Vikarie</h3>
-            <p>Internationella Engelska Skolan, Göteborg</p>
-            <p className="text-sm">2014</p>
+            <h3 className="font-bold">{t('cv.work_items.ies.title')}</h3>
+            <p>{t('cv.work_items.ies.company')}</p>
+            <p className="text-sm">{t('cv.work_items.ies.period')}</p>
           </li>
           <li className="mb-16">
-            <h3 className="font-bold">Bosatt i Australien</h3>
-            <p className="text-sm">2013–2014</p>
+            <h3 className="font-bold">{t('cv.work_items.australia.title')}</h3>
+            <p className="text-sm">{t('cv.work_items.australia.period')}</p>
           </li>
           <li className="mb-16">
-            <h3 className="font-bold">Kassa</h3>
-            <p>Willys, Göteborg</p>
-            <p className="text-sm">2011–2013</p>
+            <h3 className="font-bold">{t('cv.work_items.willys.title')}</h3>
+            <p>{t('cv.work_items.willys.company')}</p>
+            <p className="text-sm">{t('cv.work_items.willys.period')}</p>
           </li>
         </ul>
       </section>
 
       <section className="mt-48">
-        <h2 className="font-bold">Övrigt</h2>
+        <h2 className="font-bold">{t('cv.other')}</h2>
         <ul className="mt-16">
           <li className="mb-16">
             <h3 className="font-bold">
               <a href="https://valsforening.se" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">
-                Vals Förening
+                {t('cv.other_items.vals.name')}
               </a>
             </h3>
-            <p>Medgrundare och medlem</p>
-            <p className="text-sm">Driver Vals Galleri</p>
+            <p>{t('cv.other_items.vals.role')}</p>
+            <p className="text-sm">{t('cv.other_items.vals.description')}</p>
           </li>
         </ul>
       </section>

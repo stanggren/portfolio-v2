@@ -1,7 +1,11 @@
+import { useTranslation } from 'react-i18next';
+
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
-      <h1 className="font-bold pb-24">Contact</h1>
+      <h1 className="font-bold pb-24">{t('contact.title')}</h1>
       <section>
         <ul>
           <li>
