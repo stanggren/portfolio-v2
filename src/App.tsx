@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 
 function Layout() {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-dvh bg-white flex flex-col">
       <Header />
       <main className="flex-1">
         <div className="max-w-[1000px] mx-auto px-16 py-32 md:px-24">
