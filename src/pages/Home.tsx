@@ -22,8 +22,8 @@ const Home = () => {
             text={t('home.title')} 
             delay={0}
             scrambleDuration={800}
-            scrambleSpeedStart={100}
-            scrambleSpeedEnd={400}
+            scrambleSpeedStart={30}
+            scrambleSpeedEnd={150}
           />
         </h1>
         <p className="mt-4 max-w-[400px]">
@@ -32,8 +32,8 @@ const Home = () => {
             text={t('home.intro')} 
             delay={0}
             scrambleDuration={800}
-            scrambleSpeedStart={100}
-            scrambleSpeedEnd={400}
+            scrambleSpeedStart={30}
+            scrambleSpeedEnd={150}
           />
         </p>
       </div>

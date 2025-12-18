@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div>
       <h1 className="font-bold pb-24">
-        <ScrambleText text={t('contact.title')} scrambleDuration={400} scrambleSpeedStart={50} scrambleSpeedEnd={200} />
+        <ScrambleText text={t('contact.title')} scrambleDuration={400} scrambleSpeedStart={50} scrambleSpeedEnd={150} />
       </h1>
       <section>
         <ul>
