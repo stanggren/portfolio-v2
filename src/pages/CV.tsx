@@ -7,7 +7,7 @@ const CV = () => {
   return (
     <div>
       <h1 className="font-bold pb-24">
-        <ScrambleText text={t('cv.title')} scrambleDuration={1000} scrambleSpeedStart={30} scrambleSpeedEnd={150} pixelBlur />
+        <ScrambleText text={t('cv.title')} delay={0} scrambleDuration={1000} scrambleSpeedStart={30} scrambleSpeedEnd={150} pixelBlur />
       </h1>
 
       <section>
