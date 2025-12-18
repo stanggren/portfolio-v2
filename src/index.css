@@ -4,6 +4,17 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
+/* External links styling */
+a[target="_blank"] {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a[target="_blank"]:hover {
+  color: #1d4ed8;
+}
+
 @theme {
   --spacing-gutter: 1rem;
   --spacing-gutterlg: 2rem;

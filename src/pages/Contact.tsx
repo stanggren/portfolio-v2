@@ -7,18 +7,18 @@ const Contact = () => {
   return (
     <div>
       <h1 className="font-bold pb-24">
-        <ScrambleText text={t('contact.title')} scrambleDuration={400} scrambleSpeedStart={50} scrambleSpeedEnd={150} />
+        <ScrambleText text={t('contact.title')} scrambleDuration={400} scrambleSpeedStart={50} scrambleSpeedEnd={150} pixelBlur />
       </h1>
       <section>
         <ul>
           <li>
-            <a href="mailto:astanggren@gmail.com" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-blue-700">
-              astanggren@gmail.com
+            <a href="tel:+46791013513" className="font-bold hover:text-blue-700">
+              079-101 35 13
             </a>
           </li>
           <li>
-            <a href="tel:+46791013513" className="font-bold hover:text-blue-700">
-              079-101 35 13
+            <a href="mailto:astanggren@gmail.com" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-blue-700">
+              astanggren@gmail.com
             </a>
           </li>
           <li>

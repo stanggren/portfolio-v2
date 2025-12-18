@@ -1,12 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 interface FloatingCubeProps {
   delay?: number; // Delay before cube appears (ms)
+  blurDuration?: number; // Duration of blur-in effect (ms)
+  initialBlur?: number; // Initial blur amount (px)
 }
 
-const FloatingCube = ({ delay = 0 }: FloatingCubeProps) => {
+const FloatingCube = ({ delay = 0, blurDuration = 800, initialBlur = 5 }: FloatingCubeProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [blurAmount, setBlurAmount] = useState(initialBlur); // Start fully blurred
+  const [glitchBlur, setGlitchBlur] = useState(0);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -58,6 +62,9 @@ const FloatingCube = ({ delay = 0 }: FloatingCubeProps) => {
     let entranceGlitchCount = 0;
     const maxEntranceGlitches = 5; // Number of rapid glitches on entrance
 
+    // Blur-in animation
+    let blurStartTime = 0;
+
     // Glitch effect variables
     let isGlitching = false;
     let glitchEndTime = 0;
@@ -72,6 +79,11 @@ const FloatingCube = ({ delay = 0 }: FloatingCubeProps) => {
       glitchOffsetX = (Math.random() - 0.5) * 0.5;
       glitchOffsetY = (Math.random() - 0.5) * 0.5;
       glitchScale = 0.9 + Math.random() * 0.2;
+
+      // 40% chance to add blur during glitch
+      if (Math.random() < 0.4) {
+        setGlitchBlur(2 + Math.random() * 3); // Random blur 2-5px
+      }
 
       // Change geometry randomly
       const newIndex = Math.floor(Math.random() * geometries.length);
@@ -120,11 +132,23 @@ const FloatingCube = ({ delay = 0 }: FloatingCubeProps) => {
         if (elapsed >= delayMs) {
           hasAppeared = true;
           shape.visible = true;
+          blurStartTime = performance.now();
           triggerEntranceGlitch();
           entranceGlitchCount = 1;
         } else {
           renderer.render(scene, camera);
           return;
+        }
+      }
+
+      // Animate blur-in effect
+      if (blurStartTime > 0) {
+        const blurElapsed = performance.now() - blurStartTime;
+        const blurProgress = Math.min(blurElapsed / blurDuration, 1);
+        const newBlur = Math.max(0, initialBlur * (1 - blurProgress));
+        setBlurAmount(newBlur);
+        if (blurProgress >= 1) {
+          blurStartTime = 0; // Stop updating blur
         }
       }
 
@@ -145,6 +169,7 @@ const FloatingCube = ({ delay = 0 }: FloatingCubeProps) => {
         glitchOffsetX = 0;
         glitchOffsetY = 0;
         glitchScale = 1;
+        setGlitchBlur(0); // Clear glitch blur
         if (entranceGlitchCount >= maxEntranceGlitches) {
           resetGeometry();
         }
@@ -184,13 +209,19 @@ const FloatingCube = ({ delay = 0 }: FloatingCubeProps) => {
       material.dispose();
       renderer.dispose();
     };
-  }, [delay]);
+  }, [delay, blurDuration, initialBlur]);
+
+  const totalBlur = blurAmount + glitchBlur;
 
   return (
     <div
       ref={containerRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 1 }}
+      style={{ 
+        zIndex: 1,
+        filter: totalBlur > 0 ? `blur(${totalBlur}px)` : 'none',
+        transition: glitchBlur > 0 ? 'none' : 'filter 0.1s ease-out',
+      }}
     />
   );
 };
