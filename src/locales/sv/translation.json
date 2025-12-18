@@ -97,7 +97,7 @@
       "vals": {
         "name": "Vals Förening",
         "role": "Medgrundare och medlem",
-        "description": "Driver Vals Galleri"
+        "descriptionPrefix": "Driver"
       }
     }
   },

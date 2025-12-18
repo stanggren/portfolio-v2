@@ -97,7 +97,7 @@
       "vals": {
         "name": "Vals Förening",
         "role": "Co-founder and member",
-        "description": "Runs Vals Galleri"
+        "descriptionPrefix": "Runs"
       }
     }
   },

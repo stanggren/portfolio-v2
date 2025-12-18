@@ -88,7 +88,12 @@ const CV = () => {
               </a>
             </h3>
             <p>{t('cv.other_items.vals.role')}</p>
-            <p className="text-sm">{t('cv.other_items.vals.description')}</p>
+            <p className="text-sm">
+              {t('cv.other_items.vals.descriptionPrefix')}{' '}
+              <a href="https://www.instagram.com/vals.galleri/" target="_blank" rel="noopener noreferrer">
+                Vals Galleri
+              </a>
+            </p>
           </li>
         </ul>
       </section>
