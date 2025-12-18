@@ -181,7 +181,7 @@ const FloatingCube = ({ delay = 0, blurDuration = 800, initialBlur = 5 }: Floati
 
       // Floating movement + glitch offset
       shape.position.x = Math.sin(animTime * floatSpeed) * floatAmplitude + glitchOffsetX;
-      shape.position.y = Math.cos(animTime * floatSpeed * 0.7) * floatAmplitude * 0.5 + glitchOffsetY;
+      shape.position.y = Math.cos(animTime * floatSpeed * 0.7) * floatAmplitude * 0.5 + glitchOffsetY - 0.65;
 
       // Glitch scale
       shape.scale.set(glitchScale, glitchScale, glitchScale);
