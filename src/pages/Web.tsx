@@ -64,7 +64,7 @@ const Web = () => {
   return (
     <div>
       <h1 className="font-bold pb-24">
-        <ScrambleText text={t('web.title')} scrambleDuration={300} scrambleSpeedStart={30} scrambleSpeedEnd={150} pixelBlur />
+        <ScrambleText text={t('web.title')} scrambleDuration={1000} scrambleSpeedStart={30} scrambleSpeedEnd={150} pixelBlur />
       </h1>
 
       <section>
