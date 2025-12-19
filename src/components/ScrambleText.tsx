@@ -41,20 +41,20 @@ const ScrambleText = ({
   scrambleSpeedEnd = 150,
   pixelBlur = false
 }: ScrambleTextProps) => {
-  const [phase, setPhase] = useState<'waiting' | 'scrambling' | 'done'>('waiting');
+  const [phase, setPhase] = useState<'waiting' | 'scrambling' | 'done'>(delay === 0 ? 'scrambling' : 'waiting');
   const [scrambledText, setScrambledText] = useState(() => generateScrambled(text));
   const [progress, setProgress] = useState(0);
   const startTimeRef = useRef<number>(0);
 
   useEffect(() => {
-    setPhase('waiting');
+    setPhase(delay === 0 ? 'scrambling' : 'waiting');
     setScrambledText(generateScrambled(text));
     setProgress(0);
     startTimeRef.current = Date.now();
-  }, [text]);
+  }, [text, delay]);
 
   useEffect(() => {
-    if (phase !== 'waiting') return;
+    if (phase !== 'waiting' || delay === 0) return;
 
     const timeout = setTimeout(() => {
       setPhase('scrambling');
