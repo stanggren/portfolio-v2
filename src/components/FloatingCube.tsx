@@ -160,8 +160,8 @@ const FloatingCube = ({ delay = 0, blurDuration = 800, initialBlur = 5 }: Floati
       shape.rotation.x += 0.0005;
       shape.rotation.y += 0.001;
 
-      shape.position.x = Math.sin(animTime * floatSpeed) * floatAmplitude + glitchOffsetX - 0.65;
-      shape.position.y = Math.cos(animTime * floatSpeed * 0.7) * floatAmplitude * 0.5 + glitchOffsetY - 0.65;
+      shape.position.x = Math.sin(animTime * floatSpeed) * floatAmplitude + glitchOffsetX;
+      shape.position.y = Math.cos(animTime * floatSpeed * 0.7) * floatAmplitude * 0.5 + glitchOffsetY - 1;
       shape.position.z = Math.sin(animTime * floatSpeed * 0.5) * 1.5;
 
       shape.scale.set(glitchScale, glitchScale, glitchScale);
