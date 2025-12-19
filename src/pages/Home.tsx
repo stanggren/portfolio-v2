@@ -7,7 +7,6 @@ const Home = () => {
   const { t, i18n } = useTranslation();
   const [animationKey, setAnimationKey] = useState(0);
 
-  // Re-trigger animation on page load/navigation
   useEffect(() => {
     setAnimationKey(prev => prev + 1);
   }, []);
@@ -44,4 +43,3 @@ const Home = () => {
 };
 
 export default Home;
-

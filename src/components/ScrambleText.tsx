@@ -3,11 +3,11 @@ import { useEffect, useState, useRef } from 'react';
 interface ScrambleTextProps {
   text: string;
   className?: string;
-  delay?: number; // Delay before animation starts (ms)
-  scrambleDuration?: number; // How long to show randomizing scramble (ms)
-  scrambleSpeedStart?: number; // Initial scramble speed - fast (ms)
-  scrambleSpeedEnd?: number; // Final scramble speed - slow (ms)
-  pixelBlur?: boolean; // Enable pixelated blur effect during scramble
+  delay?: number;
+  scrambleDuration?: number;
+  scrambleSpeedStart?: number;
+  scrambleSpeedEnd?: number;
+  pixelBlur?: boolean;
 }
 
 const CHARS = '#%@$&*0123456789?!<>[]{}|/\\~^';
@@ -18,7 +18,6 @@ const generateScrambled = (text: string) => {
   return text.split('').map(char => char === ' ' ? ' ' : getRandomChar()).join('');
 };
 
-// SVG filter for pixelation effect
 const PixelFilter = () => (
   <svg style={{ position: 'absolute', width: 0, height: 0 }}>
     <defs>
@@ -47,7 +46,6 @@ const ScrambleText = ({
   const [progress, setProgress] = useState(0);
   const startTimeRef = useRef<number>(0);
 
-  // Reset when text changes
   useEffect(() => {
     setPhase('waiting');
     setScrambledText(generateScrambled(text));
@@ -55,7 +53,6 @@ const ScrambleText = ({
     startTimeRef.current = Date.now();
   }, [text]);
 
-  // Phase 0: Wait for delay
   useEffect(() => {
     if (phase !== 'waiting') return;
 
@@ -66,7 +63,6 @@ const ScrambleText = ({
     return () => clearTimeout(timeout);
   }, [phase, delay]);
 
-  // Phase 1: Scramble with linear slowdown, then switch to real text
   useEffect(() => {
     if (phase !== 'scrambling') return;
 
@@ -77,10 +73,8 @@ const ScrambleText = ({
       const elapsed = Date.now() - startTimeRef.current;
       const currentProgress = Math.min(elapsed / scrambleDuration, 1);
       
-      // Update progress for blur effect
       setProgress(currentProgress);
       
-      // Linear interpolation from fast to slow
       const currentSpeed = scrambleSpeedStart + (scrambleSpeedEnd - scrambleSpeedStart) * currentProgress;
 
       if (elapsed >= scrambleDuration) {
@@ -100,7 +94,6 @@ const ScrambleText = ({
     };
   }, [phase, text, scrambleDuration, scrambleSpeedStart, scrambleSpeedEnd]);
 
-  // Calculate blur amount based on progress (starts blurry, clears up)
   const blurAmount = pixelBlur ? Math.max(0, 5 * (1 - progress)) : 0;
   const usePixelFilter = pixelBlur && progress < 0.5;
   
