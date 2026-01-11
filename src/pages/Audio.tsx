@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import ScrambleText from '../components/ScrambleText';
 
 const Audio = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const basePath = i18n.language === 'sv' ? '/sv' : '';
 
   return (
     <div>
@@ -39,7 +41,14 @@ const Audio = () => {
               </a>
             </p>
           </li>
-
+          <li className="mb-16">
+            <h3 className="font-bold">
+              <Link to={`${basePath}/audio/pure-data-databending`} className="text-blue-700 hover:text-blue-900">
+                {t('audio.pureDataDatabending.title')}
+              </Link>
+            </h3>
+            <p>{t('audio.pureDataDatabending.shortDescription')}</p>
+          </li>
         </ul>
       </section>
     </div>

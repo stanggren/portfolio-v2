@@ -26,7 +26,24 @@
     "individualWorkDescription": "Music and sound art",
     "whiteHookRiverDescription": "Music & SFX",
     "whiteHookRiverAward": "Winner of Umeå University Computer Science Game Jam 2024",
-    "playDemo": "Play demo on itch.io"
+    "playDemo": "Play demo on itch.io",
+    "pureDataDatabending": {
+      "title": "Pure Data patch – Databending",
+      "shortDescription": "Generates sound via databending",
+      "description": "A PD patch that generates sound via databending. The patch reads a file and interprets the file's bytes directly as audio data, using the read and soundfiler objects. It can handle most file types and I've gotten the best results when files are over 1mb in size.",
+      "downloadLink": "Download here",
+      "instructionsTitle": "Instructions",
+      "instruction1": "Click on choose file and select a file",
+      "instruction2": "Turn up the amplitude and click play",
+      "instruction3": "You can also drag the Sample position slider to choose where in the file to play from, as much of it is pure noise",
+      "recordingTitle": "Recording",
+      "recording1": "Click on open db_1.wav under Record to file (this creates the file in your PD folder)",
+      "recording2": "Click start and click play sample / drag the Sample position",
+      "recording3": "Click stop to stop recording (The sound is saved in the wav file)",
+      "recording4": "If you want to record a new file, just change to a new name in open db_1.wav and click on it to generate a new file",
+      "exampleText": "Example of what databending can sound like.",
+      "listenHere": "Listen here"
+    }
   },
   "cv": {
     "title": "CV",

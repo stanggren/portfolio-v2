@@ -26,7 +26,24 @@
     "individualWorkDescription": "Musik och ljudkonst",
     "whiteHookRiverDescription": "Musik & ljudeffekter",
     "whiteHookRiverAward": "Vinnare av Umeå University Computer Science Game Jam 2024",
-    "playDemo": "Spela demo på itch.io"
+    "playDemo": "Spela demo på itch.io",
+    "pureDataDatabending": {
+      "title": "Pure Data patch – Databending",
+      "shortDescription": "Genererar ljud via databending",
+      "description": "En PD patch som genererar ljud via databending. Patchen läser in en fil och tolkar filens bytes direkt som ljuddata, via read och soundfiler objekten. Den kan hantera de flesta filtyper och jag har fått bäst resultat när filerna är över 1mb i storlek.",
+      "downloadLink": "Ladda ner här",
+      "instructionsTitle": "Instruktioner",
+      "instruction1": "Klicka på choose file och välj fil",
+      "instruction2": "Dra upp amplitude och klicka play",
+      "instruction3": "Det går också att dra i Sample position reglaget för att välja var i filen man ska spela ifrån då mycket är ren noise",
+      "recordingTitle": "Att spela in",
+      "recording1": "Klicka på open db_1.wav under Record to file (då skapas den filen i ens PD folder)",
+      "recording2": "Klicka start och klicka play sample / dra i Sample position",
+      "recording3": "Klicka stop för att stoppa inspelning (Ljudet sparas i wav filen)",
+      "recording4": "Om man vill spela in en ny fil är det bara att ändra till ett nytt namn i open db_1.wav och klicka på den för att generera en ny fil",
+      "exampleText": "Exempel på hur databending kan låta.",
+      "listenHere": "Lyssna här"
+    }
   },
   "cv": {
     "title": "CV",

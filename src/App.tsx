@@ -5,6 +5,7 @@ import LanguageWrapper from './components/LanguageWrapper';
 import Home from './pages/Home';
 import Web from './pages/Web';
 import Audio from './pages/Audio';
+import PureDataDatabending from './pages/PureDataDatabending';
 import CV from './pages/CV';
 import Contact from './pages/Contact';
 
@@ -18,6 +19,7 @@ function Layout() {
             <Route index element={<Home />} />
             <Route path="web" element={<Web />} />
             <Route path="audio" element={<Audio />} />
+            <Route path="audio/pure-data-databending" element={<PureDataDatabending />} />
             <Route path="cv" element={<CV />} />
             <Route path="contact" element={<Contact />} />
           </Routes>
